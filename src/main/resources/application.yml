@@ -1,0 +1,28 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/mapa_cultural
+    username: postgres
+    password: minhasenha # Note: In a real application, use environment variables or secrets management for passwords.
+  datasource: # JDBC configuration, as per the project description
+    url: jdbc:postgresql://localhost:5432/mapa_cultural
+    username: postgres
+    password: minhasenha # Note: Same security consideration as above.
+    driver-class-name: org.postgresql.Driver # Specify JDBC driver
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.fortaleza_cultural.api: DEBUG # More specific logging for our app's packages
+
+# Optional: Add a section for Spring Boot DevTools if specific configurations are needed,
+# though default DevTools settings are often sufficient.
+# spring:
+#   devtools:
+#     livereload:
+#       enabled: true
+#     restart:
+#       enabled: true
